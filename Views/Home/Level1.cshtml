@@ -1,0 +1,204 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 1</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level1.cshtml.</p>
+        <ol>
+            <li>...all womens' leagues</li>
+            <li>...all leagues where sport is any type of hockey</li>
+            <li>...all leagues where sport is something OTHER THAN football</li>
+            <li>...all leagues that call themselves "conferences"</li>
+            <li>...all leagues in the Atlantic region</li>
+            <li>...all teams based in Dallas</li>
+            <li>...all teams named the Raptors</li>
+            <li>...all teams whose location includes "City"</li>
+            <li>...all teams whose names begin with "T"</li>
+            <li>...all teams, ordered alphabetically by location</li>
+            <li>...all teams, ordered by team name in reverse alphabetical order</li>
+            <li>...every player with last name "Cooper"</li>
+            <li>...every player with first name "Joshua"</li>
+            <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</li>
+            <li>...all players with first name "Alexander" OR first name "Wyatt"</li>
+        </ol>
+    </div>
+    <div>
+        <div class="card">
+    <div class="card-header bg-dark text-light">All women's leagues</div>
+    <div class="card-body">
+        @{
+            foreach (League w in ViewBag.AllWomensLeagues)
+            {
+                <p>@w.Name</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">All hockey leagues</div>
+    <div class="card-body">
+        @{
+            foreach (League l in ViewBag.AllHockeyLeagues)
+            {
+                <p>@l.Name</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">All non football leagues</div>
+    <div class="card-body">
+        @{
+            foreach (League l in ViewBag.AllNonFootballLeagues)
+            {
+                <p>@l.Name</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Leagues called "conferences"</div>
+    <div class="card-body">
+        @{
+            foreach (League l in ViewBag.AllConference)
+            {
+                <p>@l.Name</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">all leagues in the "atlantic" region</div>
+    <div class="card-body">
+        @{
+            foreach (League l in ViewBag.AllAtlanticRegionLeagues)
+            {
+                <p>@l.Name</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Teams based in "dallas"</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.AllDallasBasedTeams)
+            {
+                <p>@t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Teams named "raptors"</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.AllTeamsNamedRaptors)
+            {
+                <p>@t.Location @t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Teams whose location includes "city"</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.TeamsWithCity)
+            {
+                <p>@t.Location @t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Teams whose names start with "T"</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.TeamsWithNameT)
+            {
+                <p>@t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">All teams listed by location and alphabetically</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.TeamsLocationAlphabetical)
+            {
+                <p>@t.Location @t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">All teams listed by name and reverse alphabetically</div>
+    <div class="card-body">
+        @{
+            foreach (Team t in ViewBag.TeamsReverseAlphabetical)
+            {
+                <p>@t.Location @t.TeamName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Every player with last name "Cooper"</div>
+    <div class="card-body">
+        @{
+            foreach (Player p in ViewBag.PlayerLastNameCooper)
+            {
+                <p>@p.FirstName @p.LastName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Every player with first name "Joshua"</div>
+    <div class="card-body">
+        @{
+            foreach (Player p in ViewBag.PlayerFirstNameJoshua)
+            {
+                <p>@p.FirstName @p.LastName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">Every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</div>
+    <div class="card-body">
+        @{
+            foreach (Player p in ViewBag.LastNameCooperWithoutJoshua)
+            {
+                <p>@p.FirstName @p.LastName</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-dark text-light">All players with first name "Alexander" OR first name "Wyatt"</div>
+    <div class="card-body">
+        @{
+            foreach (Player p in ViewBag.FirstNameAlexanderOrWyatt)
+            {
+                <p>@p.FirstName @p.LastName</p>
+            }
+        }
+    </div>
+</div>
+    </div>
+</div>
